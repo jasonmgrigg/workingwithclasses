@@ -22,6 +22,12 @@ class Factory {
     this.airbags = true;
     this.abs = true;
     this.warranty = "60,000 miles / 3 year";
+    this.massBuild = function(quantity, options) {
+      console.log("Building " + quantity + " " + this.color + " " + this.trim + " " + this.model + "\'s.");
+    };
+    this.customerBuild = function(color, options) {
+      console.log("Building one " + color + " " + this.trim + " " + this.model + " with the following options: " + options + ".");
+    };
   }
 }
 
@@ -116,24 +122,12 @@ console.log(car)
 // Print calling massBuild(), building 35000 cars.
 // It should print: "Building 35000 Red Touring Mazda3's."
 // Write your code below:
-function massBuild(quantity, options){
-  console.log("Building " + quantity + " " + car.color + " " + car.trim + " " + car.model + "'s")
-}
-
-massBuild(3500);
-
-
-
+car.massBuild(3500, car);
 
 // Print, calling customerBuild(), building one yellow mazda3 with the following options, as an array: weather package, satellite radio, rear spoiler.
 // It should read: "Building one yellow Touring Mazda3 with the following options: weather package, satellite radio, rear spoiler"
 // Write your code below:
-
-function customerBuild(color, options){
-  console.log("Building one " + color + " " + car.trim + " " + car.model + " with the following options: " + options + ".")
-}
-
-customerBuild("yellow", ("weather package, satellite radio, rear spoiler"));
+car.customerBuild("yellow", ("weather package, satellite radio, rear spoiler"));
 
 // MIATA-RF MASS PRODUCTION
 // Create an instance  Sport.
@@ -151,20 +145,12 @@ console.log(sport.trim)
 // Print miataRf, calling massBuild(), building 15,000
 // It should print: "Building 15000 Red Grand Touring Miata-RF's."
 // Write your code below:
-function massBuildSport(quantity, options){
-  console.log("Building " + quantity + " " + sport.color + " " + sport.trim + " " + sport.model + "'s")
-}
-
-massBuildSport(15000);
+sport.massBuild(15000, sport);
 
 // Print miataRf, calling customerBuild(), building one black Miata-Rf with the following options, as an array: hid headlights, sports suspension, leather steering wheel, heated seats, adaptive cruise control.
 // It should read: "Building one black Grand Touring Miata-RF with the following options: hid headlights, sports suspension, leather steering wheel, heated seats, adaptive cruise control"
 // Write your code below:
-function customerBuildsport(color, options){
-  console.log("Building one " + color + " " + sport.trim + " " + sport.model + " with the following options: " + options + ".")
-}
-
-customerBuildsport("black", ("hid headlights, sports suspension, leather steering wheel, heated seats, adaptive cruise control"));
+sport.customerBuild("black", ("hid headlights, sports suspension, leather steering wheel, heated seats, adaptive cruise control"));
 
 // TRAIL BLAZER MASS PRODUCTION
 // The Trail Blazer should inherit from truck.
@@ -181,17 +167,9 @@ console.log(trailBlazer)
 // Print trailBlazer, calling massBuid(). It should build 35000 trucks.
 // It should print: "Building 35000 blue Sport Trail Blazer's."
 // Wrint your code below:
-function massBuildTruck(quantity, options){
-  console.log("Building " + quantity + " " + trailBlazer.color + " " + trailBlazer.trim + " " + trailBlazer.model + "'s")
-}
-
-massBuildTruck(35000);
+trailBlazer.massBuild(35000, trailBlazer);
 
 // Print trailBlazer, calling customerBuild(). It should build a red Trail Blazer with the following options, as an array: seat warmers, tinted windows, fog lamps.
 // It should print: "Building one red Sport Trail Blazer with the following options: seat warmers, tinted windows, fog lamps"
 // Write your code below:
-function customerBuildTruck(color, options){
-  console.log("Building one " + color + " " + trailBlazer.trim + " " + trailBlazer.model + " with the following options: " + options + ".")
-}
-
-customerBuildTruck("red", ("seat warmers, tinted windows, fog lamps"));
+trailBlazer.customerBuild("black", ("hid headlights, sports suspension, leather steering wheel, heated seats, adaptive cruise control"));
