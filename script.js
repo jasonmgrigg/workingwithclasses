@@ -58,6 +58,7 @@ class Car extends Factory {
 // Write your code below:
 class Sport extends Car {
   constructor(model, trim, transmission, top, color, seatstrim, audio, wheelstrim){
+    super();
     this.model = model;
     this.trim = trim;
     this.transmission = transmission;
@@ -67,7 +68,7 @@ class Sport extends Car {
     this.audio = audio;
     this.wheelstrim = wheelstrim;
     this.moonroof = false;
-    this.enginetype = gasoline;
+    this.enginetype = "gasoline";
     this.convertible = true;
     this.doors = 2;
 }
@@ -108,11 +109,6 @@ let car = new Car("mazda3", 4, "red", "hybrid", "automatic", "touring", "base", 
 // Print mazda3. I should have all the above properties.
 // Write your code below:
 console.log(car)
-console.log(car.color)
-
-
-
-
 
 // Print calling massBuild(), building 35000 cars.
 // It should print: "Building 35000 Red Touring Mazda3's."
@@ -131,13 +127,10 @@ massBuild(3500);
 // Write your code below:
 
 function customerBuild(color, options){
-  console.log("Building one " + color + " " + car.trim + " " + car.model + " with the following options: " + options)
+  console.log("Building one " + color + " " + car.trim + " " + car.model + " with the following options: " + options + ".")
 }
 
 customerBuild("yellow", ("weather package, satellite radio, rear spoiler"));
-
-
-
 
 // MIATA-RF MASS PRODUCTION
 // Create an instance  Sport.
@@ -145,17 +138,11 @@ customerBuild("yellow", ("weather package, satellite radio, rear spoiler"));
 
 // Write your 'miataRf' instance below:
 // Write your code below:
-
-
-
-
+let miataRF = new Sport("Miata-RF", "Grand Touring", "manual", "hard top", "red", "leather", "premium", "premium");
 
 // Print miataRf. It should have all of the above properties. Plus, the extended warranty.
 // Write your code below:
-
-
-
-
+console.log(miataRF);
 
 // Print miataRf, calling massBuild(), building 15,000
 // It should print: "Building 15000 Red Grand Touring Miata-RF's."
