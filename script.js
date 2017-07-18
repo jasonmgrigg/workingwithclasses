@@ -134,7 +134,7 @@ function customerBuild(color, options){
   console.log("Building one " + color + " " + car.trim + " " + car.model + " with the following options: " + options)
 }
 
-customerBuild(yellow, {"weather package, satellite radio, rear spoiler"});
+customerBuild("yellow", ("weather package, satellite radio, rear spoiler"));
 
 
 
