@@ -108,6 +108,7 @@ let car = new Car("mazda3", 4, "red", "hybrid", "automatic", "touring", "base", 
 // Print mazda3. I should have all the above properties.
 // Write your code below:
 console.log(car)
+console.log(car.color)
 
 
 
@@ -116,8 +117,8 @@ console.log(car)
 // Print calling massBuild(), building 35000 cars.
 // It should print: "Building 35000 Red Touring Mazda3's."
 // Write your code below:
-function massBuild(quantity){
-  console.log("Building " + quantity + " " + car.newcolor + " " + this.trim + " " + this.model + "'s")
+function massBuild(quantity, options){
+  console.log("Building " + quantity + " " + car.color + " " + car.trim + " " + car.model + "'s")
 }
 
 massBuild(3500);
@@ -129,6 +130,11 @@ massBuild(3500);
 // It should read: "Building one yellow Touring Mazda3 with the following options: weather package, satellite radio, rear spoiler"
 // Write your code below:
 
+function customerBuild(color, options){
+  console.log("Building one " + color + " " + car.trim + " " + car.model + " with the following options: " + options)
+}
+
+customerBuild(yellow, {"weather package, satellite radio, rear spoiler"});
 
 
 
@@ -194,10 +200,3 @@ massBuild(3500);
 // Print trailBlazer, calling customerBuild(). It should build a red Trail Blazer with the following options, as an array: seat warmers, tinted windows, fog lamps.
 // It should print: "Building one red Sport Trail Blazer with the following options: seat warmers, tinted windows, fog lamps"
 // Write your code below:
-
-
-
-
-function customerBuild(color, options){
-  return ("Building one " + color + trim + model + " with the following options: " + options)
-}
